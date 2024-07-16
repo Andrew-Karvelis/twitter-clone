@@ -7,7 +7,7 @@
 } */
 
 .hoverAnimation {
-  @apply hover:cursor-pointer
+  @apply
  hover:bg-white hover:bg-opacity-10 xl:p-3 rounded-full w-11 h-11 xl:w-auto xl:h-auto;
 }
 

@@ -9,7 +9,7 @@ export default function Trending() {
         <SearchIcon className="w-6 text-gray-600" />
         <input
           className="bg-transparent focus:outline-none placeholder:text-gray-600"
-          placeholder="Search..."
+          placeholder="Search... (NYI)"
         />
       </div>
       <div className="w-[300px] h-[500px] my-3 bg-white bg-opacity-10 rounded-3xl px-3">

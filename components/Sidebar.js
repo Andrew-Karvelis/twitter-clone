@@ -23,8 +23,8 @@ export default function Sidebar() {
   async function handleSignOut() {
     await signOut(auth);
     dispatch(signOutUser());
-    dispatch(closeSignupModal())
-    dispatch(closeLoginModal())
+    dispatch(closeSignupModal());
+    dispatch(closeLoginModal());
   }
   return (
     <div className="hidden sm:flex flex-col fixed h-full xl:ml-24">
@@ -32,13 +32,37 @@ export default function Sidebar() {
         <div className="flex justify-center xl:justify-start py-3 xl:p-3">
           <Image src={"/assets/twitter-logo.png"} width={34} height={34} />
         </div>
-        <SidebarLink Icon={HomeIcon} text={"Home"} />
-        <SidebarLink Icon={HashtagIcon} text={"Explore"} />
-        <SidebarLink Icon={BellIcon} text={"Notifications"} />
-        <SidebarLink Icon={InboxIcon} text={"Messages"} />
-        <SidebarLink Icon={BookmarkIcon} text={"Bookmarks"} />
-        <SidebarLink Icon={UserIcon} text={"Profile"} />
-        <SidebarLink Icon={DotsCircleHorizontalIcon} text={"More"} />
+        <SidebarLink Icon={HomeIcon} text={"Home"} className='cursor-pointer' />
+        <SidebarLink
+          Icon={HashtagIcon}
+          text={"Explore"}
+          className="cursor-not-allowed"
+        />
+        <SidebarLink
+          Icon={BellIcon}
+          text={"Notifications"}
+          className="cursor-not-allowed"
+        />
+        <SidebarLink
+          Icon={InboxIcon}
+          text={"Messages"}
+          className="cursor-not-allowed"
+        />
+        <SidebarLink
+          Icon={BookmarkIcon}
+          text={"Bookmarks"}
+          className="cursor-not-allowed"
+        />
+        <SidebarLink
+          Icon={UserIcon}
+          text={"Profile"}
+          className="cursor-not-allowed"
+        />
+        <SidebarLink
+          Icon={DotsCircleHorizontalIcon}
+          text={"More"}
+          className="cursor-not-allowed"
+        />
         <button
           className="hidden xl:inline bg-[#1d9bf0] 
         rounded-full h-[52px] mt-2 w-[200px] text-lg font-bold"
@@ -66,9 +90,9 @@ export default function Sidebar() {
   );
 }
 
-function SidebarLink({ text, Icon }) {
+function SidebarLink({ text, Icon, className }) {
   return (
-    <li className="hoverAnimation flex mb-3 xl:justify-start justify-center items-center text-xl space-x-3">
+    <li className={`${className} hoverAnimation flex mb-3 xl:justify-start justify-center items-center text-xl space-x-3 `}>
       <Icon className="h-7" />
       <span className="hidden xl:inline">{text}</span>
     </li>
